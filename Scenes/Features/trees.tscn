@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://bcbqxcw6avrdl"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_c5kmi"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_c5kmi"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0f04d"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dr3c4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_37n8k"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7ffx5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qaplf"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_f7ch7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uk8ir"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0xnt8"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8oxcm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0qbdq"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q7bf7"]
+
+[node name="Node3D" type="Node3D" unique_id=2087140486]
+
+[node name="TreeMesh" type="MeshInstance3D" parent="." unique_id=1807024885]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, 0.03157091, 1, -0.16670954)
+mesh = SubResource("CylinderMesh_c5kmi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeMesh" unique_id=1430361492]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeMesh/StaticBody3D" unique_id=1586526952]
+shape = SubResource("CylinderShape3D_c5kmi")
+
+[node name="TreeMesh12" type="MeshInstance3D" parent="." unique_id=2055068407]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, -0.5650997, 1, 0.63734007)
+mesh = SubResource("CylinderMesh_c5kmi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeMesh12" unique_id=775484872]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeMesh12/StaticBody3D" unique_id=1404754011]
+shape = SubResource("CylinderShape3D_0f04d")
+
+[node name="TreeMesh10" type="MeshInstance3D" parent="." unique_id=1197453715]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, -2.5502682, 1, -1.3687158)
+mesh = SubResource("CylinderMesh_c5kmi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeMesh10" unique_id=764910084]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeMesh10/StaticBody3D" unique_id=686636864]
+shape = SubResource("CylinderShape3D_dr3c4")
+
+[node name="TreeMesh2" type="MeshInstance3D" parent="." unique_id=1964544593]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, 2.2124362, 1, -0.2807182)
+mesh = SubResource("CylinderMesh_c5kmi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeMesh2" unique_id=44102694]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeMesh2/StaticBody3D" unique_id=615837668]
+shape = SubResource("CylinderShape3D_37n8k")
+
+[node name="TreeMesh3" type="MeshInstance3D" parent="." unique_id=1491662426]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, -1.2731982, 1.0000005, -1.7621727)
+mesh = SubResource("CylinderMesh_c5kmi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeMesh3" unique_id=491011060]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeMesh3/StaticBody3D" unique_id=1519519519]
+shape = SubResource("CylinderShape3D_7ffx5")
+
+[node name="TreeMesh4" type="MeshInstance3D" parent="." unique_id=792713497]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, -2.4948378, 1, 0.88528776)
+mesh = SubResource("CylinderMesh_c5kmi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeMesh4" unique_id=90792729]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeMesh4/StaticBody3D" unique_id=1778922982]
+shape = SubResource("CylinderShape3D_qaplf")
+
+[node name="TreeMesh5" type="MeshInstance3D" parent="." unique_id=708481849]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, -0.12057018, 1, 2.3398786)
+mesh = SubResource("CylinderMesh_c5kmi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeMesh5" unique_id=1268356132]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeMesh5/StaticBody3D" unique_id=635152760]
+shape = SubResource("CylinderShape3D_f7ch7")
+
+[node name="TreeMesh6" type="MeshInstance3D" parent="." unique_id=441769033]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, 1.4638149, 1.0000005, 1.5173934)
+mesh = SubResource("CylinderMesh_c5kmi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeMesh6" unique_id=1439167164]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeMesh6/StaticBody3D" unique_id=613517474]
+shape = SubResource("CylinderShape3D_uk8ir")
+
+[node name="TreeMesh7" type="MeshInstance3D" parent="." unique_id=824446986]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, -2.291047, 1.0000005, 2.4279845)
+mesh = SubResource("CylinderMesh_c5kmi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeMesh7" unique_id=1732116218]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeMesh7/StaticBody3D" unique_id=169703942]
+shape = SubResource("CylinderShape3D_0xnt8")
+
+[node name="TreeMesh8" type="MeshInstance3D" parent="." unique_id=934778074]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, 1.1816449, 1.000001, 2.945894)
+mesh = SubResource("CylinderMesh_c5kmi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeMesh8" unique_id=1502371006]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeMesh8/StaticBody3D" unique_id=799113086]
+shape = SubResource("CylinderShape3D_8oxcm")
+
+[node name="TreeMesh9" type="MeshInstance3D" parent="." unique_id=678291235]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, 0.8487302, 1.000001, -1.882828)
+mesh = SubResource("CylinderMesh_c5kmi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeMesh9" unique_id=1313350911]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeMesh9/StaticBody3D" unique_id=1400248471]
+shape = SubResource("CylinderShape3D_0qbdq")
+
+[node name="TreeMesh11" type="MeshInstance3D" parent="." unique_id=584914819]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, 1.828486, 1.000001, -1.6568964)
+mesh = SubResource("CylinderMesh_c5kmi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeMesh11" unique_id=1554299662]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeMesh11/StaticBody3D" unique_id=2076365951]
+shape = SubResource("CylinderShape3D_q7bf7")

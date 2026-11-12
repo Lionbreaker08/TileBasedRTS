@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TerrainType" format=3 uid="uid://bhqolaf0hqjem"]
+
+[ext_resource type="Script" uid="uid://bws3ojd0anlq7" path="res://scripts/terrain_type.gd" id="1_gvitd"]
+[ext_resource type="PackedScene" uid="uid://giuhdd5goiib" path="res://Scenes/Tiles/grass_tile.tscn" id="2_iwxfl"]
+
+[resource]
+script = ExtResource("1_gvitd")
+terrain_name = "Grass"
+terrain_scene = ExtResource("2_iwxfl")
+metadata/_custom_type_script = "uid://bws3ojd0anlq7"

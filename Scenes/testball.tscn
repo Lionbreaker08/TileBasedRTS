@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bsbetddtpokuq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fo5ed"]
+albedo_color = Color(0, 0.85490197, 0.23529412, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_st1a6"]
+material = SubResource("StandardMaterial3D_fo5ed")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1l0nh"]
+
+[node name="Testball" type="Node3D" unique_id=443231277]
+
+[node name="TestNode2" type="MeshInstance3D" parent="." unique_id=1748650013]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+mesh = SubResource("SphereMesh_st1a6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TestNode2" unique_id=1475234288]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestNode2/StaticBody3D" unique_id=926638834]
+shape = SubResource("SphereShape3D_1l0nh")

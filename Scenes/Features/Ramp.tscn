@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c8gv40dq55q48"]
+
+[ext_resource type="Script" uid="uid://bcpl2q5dmbvnv" path="res://scripts/Navigation Scripts/nav_portal.gd" id="1_u1joq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5xel"]
+albedo_color = Color(0, 0.4509804, 0.14901961, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_r5xel"]
+material = SubResource("StandardMaterial3D_r5xel")
+left_to_right = 0.0
+size = Vector3(4, 1, 8)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y5bug"]
+data = PackedVector3Array(-2, 0.5, 4, 2, -0.5, 4, -2, -0.5, 4, -2, 0.5, -4, -2, -0.5, -4, 2, -0.5, -4, -2, 0.5, 4, -2, 0.5, -4, 2, -0.5, 4, -2, 0.5, -4, 2, -0.5, -4, 2, -0.5, 4, -2, 0.5, -4, -2, 0.5, 4, -2, -0.5, -4, -2, 0.5, 4, -2, -0.5, 4, -2, -0.5, -4, -2, -0.5, 4, 2, -0.5, 4, -2, -0.5, -4, 2, -0.5, 4, 2, -0.5, -4, -2, -0.5, -4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qlypj"]
+size = Vector3(0.2652893, 1, 3.9506836)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vecbu"]
+size = Vector3(0.19041798, 1, 7.8)
+
+[node name="Node3D" type="Node3D" unique_id=1342134277]
+
+[node name="MeshContainer" type="Node3D" parent="." unique_id=1723808988]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshContainer" unique_id=2132398656]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 0, 0.5, -2)
+layers = 3
+mesh = SubResource("PrismMesh_r5xel")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshContainer/MeshInstance3D2" unique_id=228534077]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshContainer/MeshInstance3D2/StaticBody3D" unique_id=1289452440]
+shape = SubResource("ConcavePolygonShape3D_y5bug")
+
+[node name="PortalContainer" type="Node3D" parent="." unique_id=721499960]
+
+[node name="Area3D" type="Area3D" parent="PortalContainer" unique_id=1156999976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 2.0213575)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_u1joq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PortalContainer/Area3D" unique_id=98763112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01210022, 0, -0.036376953)
+shape = SubResource("BoxShape3D_qlypj")
+
+[node name="Area3D2" type="Area3D" parent="PortalContainer" unique_id=1861553930]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 0.5, 2.021)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_u1joq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PortalContainer/Area3D2" unique_id=1745173414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01210022, 0, -0.036376953)
+shape = SubResource("BoxShape3D_qlypj")
+
+[node name="Area3D3" type="Area3D" parent="PortalContainer" unique_id=1011848765]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.5, 4)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_u1joq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PortalContainer/Area3D3" unique_id=293225221]
+shape = SubResource("BoxShape3D_vecbu")
+
+[node name="Area3D4" type="Area3D" parent="PortalContainer" unique_id=1500000052]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1.5690945, -4.04685)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_u1joq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PortalContainer/Area3D4" unique_id=1356996837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09129095, 0, 2.842171e-14)
+shape = SubResource("BoxShape3D_vecbu")

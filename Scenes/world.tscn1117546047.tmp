@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dgfta6rkxwvp1"]
+
+[ext_resource type="Script" uid="uid://p42jmtekqo4x" path="res://scripts/terrain_manager.gd" id="1_a02cp"]
+[ext_resource type="Script" uid="uid://bq8w87322kxfe" path="res://scripts/game_manager.gd" id="1_fo5ed"]
+[ext_resource type="PackedScene" uid="uid://bsbetddtpokuq" path="res://Scenes/testball.tscn" id="2_5ukr8"]
+[ext_resource type="Resource" uid="uid://wmmptk3wq1a5" path="res://Resources/Maps/test_map.tres" id="2_go701"]
+[ext_resource type="Script" uid="uid://b1px8qbyldje" path="res://TerrainEditor/camera_controller.gd" id="3_5a7ea"]
+[ext_resource type="Script" uid="uid://drlfesfjq8eew" path="res://scripts/Navigation Scripts/nav_manager.gd" id="4_8j60k"]
+
+[node name="WorldManager" type="Node3D" unique_id=1574176947 node_paths=PackedStringArray("nav_manager", "terrain_manager")]
+script = ExtResource("1_fo5ed")
+nav_manager = NodePath("NavManager")
+terrain_manager = NodePath("TerrainManager")
+debug_ball = ExtResource("2_5ukr8")
+
+[node name="TerrainManager" type="Node3D" parent="." unique_id=1783487523]
+script = ExtResource("1_a02cp")
+map = ExtResource("2_go701")
+tile_size = 8
+tile_height_modifier = 5
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1803052459]
+transform = Transform3D(1, 0, 0, 0, 0.9868112, 0.1618754, 0, -0.1618754, 0.9868112, -0.24478269, 1.1152226, 5.720322)
+script = ExtResource("3_5a7ea")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2052154292]
+transform = Transform3D(1, 0, 0, 0, 0.99770117, 0.06776732, 0, -0.06776732, 0.99770117, 0, 0, 0)
+
+[node name="NavManager" type="Node3D" parent="." unique_id=366627]
+script = ExtResource("4_8j60k")
+map_definition = ExtResource("2_go701")
+tile_size = 8
+tile_height_modifier = 5
+agent_height = 0.625
+agent_radius = 0.25
+cell_size = 0.125
+cell_height = 0.125
+cell_max_error = 0.8

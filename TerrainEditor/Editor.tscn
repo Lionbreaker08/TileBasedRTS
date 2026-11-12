@@ -1,0 +1,240 @@
+[gd_scene format=3 uid="uid://c1h5h8f762mim"]
+
+[ext_resource type="Script" uid="uid://bnu8ija53tiat" path="res://TerrainEditor/editor.gd" id="1_6xxcj"]
+[ext_resource type="Resource" uid="uid://bhqolaf0hqjem" path="res://Resources/Terrains/Grass.tres" id="2_jcyd3"]
+[ext_resource type="Resource" uid="uid://bsivxon6nlnhd" path="res://Resources/Terrains/Rock.tres" id="3_tplnt"]
+[ext_resource type="Resource" uid="uid://bk5qnyjcniij5" path="res://Resources/Features/building_a.tres" id="4_krmke"]
+[ext_resource type="Resource" uid="uid://dvm4s2dn366h6" path="res://Resources/Features/ramp.tres" id="4_s763r"]
+[ext_resource type="Script" uid="uid://b1px8qbyldje" path="res://TerrainEditor/camera_controller.gd" id="4_tplnt"]
+[ext_resource type="Resource" uid="uid://eby80mdihlkr" path="res://Resources/Features/forest.tres" id="6_j5s4c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bl76"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(0.3529412, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p1dc4"]
+material = SubResource("StandardMaterial3D_6bl76")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6xxcj"]
+
+[node name="Editor" type="Node3D" unique_id=77864512]
+script = ExtResource("1_6xxcj")
+grass = ExtResource("2_jcyd3")
+rock = ExtResource("3_tplnt")
+ramp = ExtResource("4_s763r")
+building_a = ExtResource("4_krmke")
+forest = ExtResource("6_j5s4c")
+tile_size = 8
+tile_height_modifier = 5
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=366550108]
+transform = Transform3D(1, 0, 0, 0, 0.8077889, 0.5894719, 0, -0.5894719, 0.8077889, 0, 6.631651, 8.531519)
+script = ExtResource("4_tplnt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=563376273]
+transform = Transform3D(1, 0, 0, 0, 0.696136, 0.71791, 0, -0.71791, 0.696136, 0, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1715387884]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1374661153]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -151.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=1540454013]
+layout_mode = 2
+offset_transform_position = Vector2(1, 0)
+theme_override_constants/separation = 20
+
+[node name="LabelTerrain" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=1630449567]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Terrain: [Blank]"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="LabelHeight" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=1009990777]
+layout_mode = 2
+text = "Height: [0]"
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/VBoxContainer" unique_id=1328345368]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/PanelContainer" unique_id=636282833]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1518157361]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.85
+tab_alignment = 1
+current_tab = 1
+
+[node name="Terrain Editing" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer" unique_id=1318747707]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 50
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Terrain Editing" unique_id=1014450956]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelTerrainOptions" type="Label" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Terrain Editing/VBoxContainer" unique_id=1222371620]
+layout_mode = 2
+text = "Terrain"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Terrain Editing/VBoxContainer" unique_id=887249298]
+layout_mode = 2
+
+[node name="grass_button" type="Button" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Terrain Editing/VBoxContainer/HBoxContainer" unique_id=1743941895]
+layout_mode = 2
+offset_transform_position = Vector2(20, 0)
+action_mode = 0
+text = "Grass
+"
+icon_alignment = 1
+
+[node name="dirt_button" type="Button" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Terrain Editing/VBoxContainer/HBoxContainer" unique_id=1969752689]
+layout_mode = 2
+action_mode = 0
+text = "Dirt
+"
+icon_alignment = 1
+
+[node name="blank_button" type="Button" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Terrain Editing/VBoxContainer/HBoxContainer" unique_id=371634093]
+layout_mode = 2
+action_mode = 0
+text = "Blank
+"
+icon_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Terrain Editing" unique_id=1299634688]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelHeightOptions" type="Label" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Terrain Editing/VBoxContainer2" unique_id=1796007969]
+layout_mode = 2
+text = "Height"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Terrain Editing/VBoxContainer2" unique_id=485205722]
+layout_mode = 2
+
+[node name="HeightInsert" type="SpinBox" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Terrain Editing/VBoxContainer2/HBoxContainer" unique_id=1527867537]
+layout_mode = 2
+alignment = 1
+
+[node name="Feature Editing" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer" unique_id=478668748]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing" unique_id=1909103702]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelFeatureOptions" type="Label" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing/VBoxContainer2" unique_id=1429923461]
+layout_mode = 2
+text = "Features"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing/VBoxContainer2" unique_id=766714088]
+layout_mode = 2
+
+[node name="ramp_button" type="Button" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing/VBoxContainer2/HBoxContainer" unique_id=917110854]
+layout_mode = 2
+offset_transform_position = Vector2(20, 0)
+action_mode = 0
+text = "Ramp
+"
+icon_alignment = 1
+
+[node name="forest_button" type="Button" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing/VBoxContainer2/HBoxContainer" unique_id=1047689320]
+layout_mode = 2
+action_mode = 0
+text = "Forest
+
+"
+icon_alignment = 1
+
+[node name="building_A_button" type="Button" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing/VBoxContainer2/HBoxContainer" unique_id=1865567861]
+layout_mode = 2
+action_mode = 0
+text = "Building A
+"
+icon_alignment = 1
+
+[node name="blank_button" type="Button" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing/VBoxContainer2/HBoxContainer" unique_id=1772675245]
+layout_mode = 2
+action_mode = 0
+text = "Blank
+"
+icon_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing" unique_id=1146516642]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelRotationOptions" type="Label" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing/VBoxContainer3" unique_id=922623611]
+layout_mode = 2
+text = "Rotation"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing/VBoxContainer3" unique_id=638918068]
+layout_mode = 2
+
+[node name="RotationOptionButton" type="OptionButton" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing/VBoxContainer3/HBoxContainer" unique_id=1183746669]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "NORTH"
+popup/item_0/id = 0
+popup/item_1/text = "EAST"
+popup/item_1/id = 1
+popup/item_2/text = "SOUTH"
+popup/item_2/id = 2
+popup/item_3/text = "WEST"
+popup/item_3/id = 3
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1959720792]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelSaveOptions" type="Label" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3" unique_id=359103006]
+layout_mode = 2
+text = "General"
+horizontal_alignment = 1
+
+[node name="save_button" type="Button" parent="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3" unique_id=1827332616]
+layout_mode = 2
+text = "Save"
+
+[node name="PlacementPlatform" type="Node3D" parent="." unique_id=753351765]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlacementPlatform" unique_id=11212458]
+transform = Transform3D(88, 0, 0, 0, 1, 0, 0, 0, 88, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_p1dc4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PlacementPlatform/MeshInstance3D" unique_id=888594657]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlacementPlatform/MeshInstance3D/StaticBody3D" unique_id=81498926]
+shape = SubResource("BoxShape3D_6xxcj")
+
+[connection signal="tab_changed" from="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Terrain Editing/VBoxContainer/HBoxContainer/grass_button" to="." method="_on_grass_selected"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Terrain Editing/VBoxContainer/HBoxContainer/dirt_button" to="." method="_on_dirt_selected"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Terrain Editing/VBoxContainer/HBoxContainer/blank_button" to="." method="_on_blank_selected"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Terrain Editing/VBoxContainer2/HBoxContainer/HeightInsert" to="." method="_on_height_updated"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing/VBoxContainer2/HBoxContainer/ramp_button" to="." method="_on_feature_ramp_selected"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing/VBoxContainer2/HBoxContainer/forest_button" to="." method="_on_feature_forest_selected"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing/VBoxContainer2/HBoxContainer/building_A_button" to="." method="_on_feature_building_a_selected"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing/VBoxContainer2/HBoxContainer/blank_button" to="." method="_on_feature_blank_selected"]
+[connection signal="item_selected" from="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/TabContainer/Feature Editing/VBoxContainer3/HBoxContainer/RotationOptionButton" to="." method="_on_rotation_option_button_item_selected"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/save_button" to="." method="map_save"]

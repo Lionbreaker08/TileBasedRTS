@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FeatureType" format=3 uid="uid://dvm4s2dn366h6"]
+
+[ext_resource type="Script" uid="uid://c8txnrdf7m5vv" path="res://scripts/feature_type.gd" id="1_jpwnk"]
+[ext_resource type="PackedScene" uid="uid://c8gv40dq55q48" path="res://Scenes/Features/Ramp.tscn" id="1_vrxdo"]
+
+[resource]
+script = ExtResource("1_jpwnk")
+feature_name = "Ramp"
+feature_scene = ExtResource("1_vrxdo")
+nav_type = 2
+metadata/_custom_type_script = "uid://c8txnrdf7m5vv"

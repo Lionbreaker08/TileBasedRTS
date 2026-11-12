@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://clakqdmvpombh"]
+
+[ext_resource type="Script" uid="uid://c26ei3nbh172q" path="res://MainMenu/main_menu.gd" id="1_nhkf3"]
+
+[node name="MainMenu" type="Control" unique_id=485654665]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nhkf3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=90911127]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09716965, 0.17188689, 0.2999736, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=148287523]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1710303797]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 25
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer" unique_id=1300984169]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "TILE BASED RTS: PROTOTYPE"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" unique_id=1562338855]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer2" unique_id=944149227]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2" unique_id=1010262188]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/MarginContainer" unique_id=1572337484]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1399622549]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer" unique_id=737399009]
+layout_mode = 2
+
+[node name="EnterMainButton" type="Button" parent="VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=813128984]
+layout_mode = 2
+text = "Enter Prototype Pathfinder"
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1705774957]
+layout_mode = 2
+text = "Controls:
+ESC: Quit to Menu
+ALT + Left Click/Right Click = Place Start/Destination
+Hold Right Click: Rotate Camera
+W,A,S,D: Move Camera"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1034071952]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer3" unique_id=7510246]
+layout_mode = 2
+
+[node name="EnterEditorButton" type="Button" parent="VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer3/VBoxContainer" unique_id=594637877]
+layout_mode = 2
+text = "Enter Prototype Level Editor"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer3/VBoxContainer" unique_id=243322756]
+layout_mode = 2
+text = "Controls:
+ESC: Quit to Menu
+Left Click: Place Selected Feature/Terrain Piece
+Hold Right Click: Rotate Camera
+W,A,S,D: Move Camera"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1003021376]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer2" unique_id=956636937]
+layout_mode = 2
+
+[node name="ExitGameButton" type="Button" parent="VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer" unique_id=285748990]
+layout_mode = 2
+text = "Exit Prototype"
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/EnterMainButton" to="." method="_on_enter_main_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer3/VBoxContainer/EnterEditorButton" to="." method="_on_enter_editor_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]

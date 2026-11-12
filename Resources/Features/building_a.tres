@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FeatureType" format=3 uid="uid://bk5qnyjcniij5"]
+
+[ext_resource type="PackedScene" uid="uid://3abnvff86d5o" path="res://Scenes/Features/building_a.tscn" id="1_ewawj"]
+[ext_resource type="Script" uid="uid://c8txnrdf7m5vv" path="res://scripts/feature_type.gd" id="1_u5q53"]
+
+[resource]
+script = ExtResource("1_u5q53")
+feature_name = "Building A"
+feature_scene = ExtResource("1_ewawj")
+nav_type = 2
+metadata/_custom_type_script = "uid://c8txnrdf7m5vv"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FeatureType" format=3 uid="uid://eby80mdihlkr"]
+
+[ext_resource type="PackedScene" uid="uid://bcbqxcw6avrdl" path="res://Scenes/Features/trees.tscn" id="1_ab47x"]
+[ext_resource type="Script" uid="uid://c8txnrdf7m5vv" path="res://scripts/feature_type.gd" id="1_r0kui"]
+
+[resource]
+script = ExtResource("1_r0kui")
+feature_name = "Forest"
+feature_scene = ExtResource("1_ab47x")
+nav_type = 1
+metadata/_custom_type_script = "uid://c8txnrdf7m5vv"
